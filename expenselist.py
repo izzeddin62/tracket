@@ -7,4 +7,3 @@ def expense_list():
         print("these are your expenses:")
         for expense in expenses:
             print(f'{expense[0]}: {expense[1]}')
-expense_list()
