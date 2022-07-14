@@ -22,3 +22,5 @@ def expense_add():
     amount = int(input("How much have you spent?:" ))
     expenses.append((name, amount))
     print(f'Your expense has been recorded successfully.')
+
+
