@@ -6,6 +6,7 @@ def main_page():
     print("1.View my expense\n")
     print("2.Add new expense\n")
     print("3.Total expenses\n")
+    print("4.Exit expenses\n")
     option = input("What do you want to do?")
     if int(option) == 1:
         expenselist.expense_list()
@@ -15,6 +16,9 @@ def main_page():
          main_page()
     elif int(option) == 3:
         expenselist.expense_sum()
+        main_page()
+    elif int(option) == 4:
+        expenselist.expense_exit(0)
         main_page()
     else:
         print("invalid input")
