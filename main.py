@@ -9,6 +9,11 @@ def main_page():
     option = input("What do you want to do?")
     if int(option) == 1:
         expenselist.expense_list()
+    elif int(option) == 2: 
+         expenselist.expense_add()
+         main_page()
+    elif int(option) == 3:
+        expenselist.expense_sum()
     return option
 
 main_page()
