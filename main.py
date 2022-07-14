@@ -18,8 +18,7 @@ def main_page():
         expenselist.expense_sum()
         main_page()
     elif int(option) == 4:
-        expenselist.expense_exit(0)
-        main_page()
+        exit(0)
     else:
         print("invalid input")
         main_page()
