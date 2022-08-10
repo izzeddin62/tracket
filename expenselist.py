@@ -1,22 +1,26 @@
-from uuid import uuid4
-class expense:
+#!/usr/bin/python3
+from expense import Expense
 
-    def __init__(self, name, value):
-        self.name = name
-        self.value = value
-        self.id = str(uuid4)
-    
+expenses = [Expense('Rent', 300),Expense("leisure", 400)]
 
-    """ getter method """
-    def get_name(self):
-        return self.name
+def expense_list():
+    if len(expenses) == 0:
+        print("You don't have any expense yet")
+    else:
+        print("these are your expenses:")
+        for expense in expenses:
+            print(f'{expense.get_name()}: {expense.get_value()}')
 
-    def get_value(self):
-        return self.value
-        
-    """ setter method """
-    def set_value(self, x):
-        self.name = x
-    
-    def set_name(self, y):
-        self.value = y
+
+def expense_sum():
+    summ = 0
+    for expense in expenses:
+        summ += expense.get_value()
+    print("Your total expense:", summ)
+
+def expense_add():
+    print(f'You are adding a new expense')
+    name = input("What is the expense name?:" )
+    amount = int(input("How much have you spent?:" ))
+    expenses.append(Expense(name, amount))
+    print(f'Your expense has been recorded successfully.')
