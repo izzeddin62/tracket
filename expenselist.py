@@ -11,12 +11,14 @@ def expense_list():
         for expense in expenses:
             print(f'{expense.get_name()}: {expense.get_value()}')
 
-
-def expense_sum():
+def sum():
     summ = 0
     for expense in expenses:
         summ += expense.get_value()
-    print("Your total expense:", summ)
+    return summ
+
+def expense_sum():
+    print(f"Your total expense:{sum()}")
 
 def expense_add():
     print(f'You are adding a new expense')
