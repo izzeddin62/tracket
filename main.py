@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 import expenselist
 def main_page():
     print("HELLO WELCOME TO TRACKET\n")
