@@ -1,4 +1,6 @@
 from uuid import uuid4
+
+
 class Expense:
 
     def __init__(self, name, value):
@@ -8,6 +10,7 @@ class Expense:
     
 
     """ getter method """
+
     def get_name(self):
         return self.name
 
@@ -20,3 +23,73 @@ class Expense:
     
     def set_name(self, y):
         self.value = y
+
+expenses = [Expense('Rent', 300),Expense("leisure", 400)]
+
+class View():
+    def __init__(self):
+        pass
+
+    
+    @staticmethod
+    def ExpenseView(expenses):
+        if len(expenses) == 0:
+            print("You don't have any expense yet")
+        else:
+            print("these are your expenses:")
+            for expense in expenses:
+                print(f'{expense.get_name()}: {expense.get_value()}')
+
+    @staticmethod
+    def Sum():
+        summ = 0
+        for expense in expenses:
+            summ += expense.get_value()
+        return summ
+
+    @staticmethod
+    def SumView():
+        print(f"Your total expense:{sum()}")
+
+
+    @staticmethod
+    def expense_add(expenses):
+        print(f'You are adding a new expense')
+        name = input("What is the expense name?:" )
+        amount = int(input("How much have you spent?:" ))
+        expenses.append(Expense(name, amount))
+        print(f'Your expense has been recorded successfully.')
+
+
+    @staticmethod
+    def MenuView(income):
+
+        print("------------------------------------------------")
+        print("------------------------------------------------")
+
+        print(f"You have already spent {View.Sum()}")
+
+        if income is not None:
+            remaining = income - View.Sum()
+
+            if remaining > 0:
+                print(f"You are remaining with only {remaining}.")
+
+            elif remaining == 0:
+                print("You have spent all your money.\n Be careful until you make more.")
+
+            else:
+                print(f"You are running on a budget.\n You already spent {remaining} above your budget.")
+
+        print("--------------------------------------------------")
+        print("--------------------------------------------------")
+        print("         HELLO, WELCOME TO TRACKET!!\n")
+        print("         Choose an option\n")
+        print("         1-View your expenses\n")
+        print("         2-Add new expense\n")
+        print("         3-Add your income\n")
+        print("         4-Exit expenses\n")
+        print("--------------------------------------------------")
+    
+
+    
