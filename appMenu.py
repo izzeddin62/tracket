@@ -14,7 +14,7 @@ def main_page(income=None):
         elif remaining == 0:
             print("You have spent all your money.\n Be careful until you make more.")
         else:
-            print(f"You are spending money you don't have.\n You already spent {remaining} above your budget.")
+            print(f"You are running on a budget.\n You already spent {remaining} above your budget.")
     print("=====================================")
     print("=====================================")
     print("HELLO, WELCOME TO TRACKET!!\n")
