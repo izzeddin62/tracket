@@ -3,16 +3,22 @@ from expense import Expense
 import os
 from utility import clear_screen
 
+from tabulate import tabulate
+
 expenses = [Expense('Rent', 3000),Expense("Leisure", 1000)]
+data = [[i.name, i.value] for i in expenses]
+print(data)
 
 def expense_list():
     os.system('clear')
     if len(expenses) == 0:
         print("You don't have any expense yet.")
     else:
-        print("These are your expenses.")
-        for expense in expenses:
-            print(f'{expense.get_name()}: {expense.get_value()}')
+        print("These are your expenses.\n\n")
+        #for expense in expenses:
+            #print(f'{expense.get_name()}: {expense.get_value()}')
+        print(tabulate(data, headers= ['NAME', 'VALUE']))
+        print("\n\n")
     clear_screen() 
 def sum():
     summ = 0
