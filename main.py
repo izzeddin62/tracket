@@ -1,5 +1,6 @@
 from expense import View, Expense
 import os
+import json
 
 if __name__ == '__main__':
     Income = None
@@ -36,8 +37,18 @@ if __name__ == '__main__':
                 value = int(input("Please, try again. ==> "))
             Income = value
             print(f"Income set to {value} successfully.")
-            
+        
         elif int(option) == 4:
+
+            print("Started writing list data into a json file")
+            with open("expenses.json", "w") as fp:
+                json_data = json.dump(expenses, fp)
+                print("Done writing JSON data into .json file")
+            
+        elif int(option) == 5:
             exit(0)
+        else:
+            os.system('cls')
+            continue
         
     print("...........................................................................................................................\n") 
