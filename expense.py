@@ -2,15 +2,14 @@ from uuid import uuid4
 
 
 class Expense:
+    """ Creating the expense class """
 
     def __init__(self, name, value):
         self.name = name
         self.value = value
         self.id = str(uuid4)
     
-
     """ getter method """
-
     def get_name(self):
         return self.name
 
@@ -24,13 +23,14 @@ class Expense:
     def set_name(self, y):
         self.value = y
 
+
 expenses = [Expense('Rent', 300),Expense("leisure", 400)]
 
 class View():
+    """ Creating the view class """
     def __init__(self):
         pass
 
-    
     @staticmethod
     def ExpenseView(expenses):
         if len(expenses) == 0:
@@ -64,8 +64,9 @@ class View():
     @staticmethod
     def MenuView(income):
 
-        print("------------------------------------------------")
-        print("------------------------------------------------")
+        """ Display of Menu and differents options """
+        print("-----------------------------------------------")
+        print("-----------------------------------------------")
 
         print(f"You have already spent {View.Sum()}")
 
@@ -76,13 +77,13 @@ class View():
                 print(f"You are remaining with only {remaining}.")
 
             elif remaining == 0:
-                print("You have spent all your money.\n Be careful until you make more.")
+                print("You will run out of money.\n Be careful until you make more.")
 
             else:
                 print(f"You are running on a budget.\n You already spent {remaining} above your budget.")
 
-        print("--------------------------------------------------")
-        print("--------------------------------------------------")
+        print("-------------------------------------------------")
+        print("-------------------------------------------------")
         print("         HELLO, WELCOME TO TRACKET!!\n")
         print("         Choose an option\n")
         print("         1-View your expenses\n")
@@ -90,7 +91,7 @@ class View():
         print("         3-Add your income\n")
         print("         4-Saving all the expenses\n")
         print("         5-Exit")
-        print("--------------------------------------------------")
+        print("-------------------------------------------------")
     
 
     
