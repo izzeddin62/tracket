@@ -40,7 +40,7 @@ class View():
         if len(expenses) == 0:
             print("You don't have any expense yet")
         else:
-            print("these are your expenses:")
+            print("These are your expenses:")
             for expense in expenses:
                 print(f'{expense.get_name()}: {expense.get_value()}')
             input("Press Enter to continue...")
@@ -94,7 +94,7 @@ class View():
         print("         1-View your expenses\n")
         print("         2-Add new expense\n")
         print("         3-Add your income\n")
-        print("         4-Retrive all the expenses\n")
+        print("         4-Retrieve all the expenses\n")
         print("         5-Exit\n")
         print("-------------------------------------------------")
     
