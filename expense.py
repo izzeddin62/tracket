@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 from time import sleep
 from uuid import uuid4
+
+from tabulate import tabulate
 import os
 
 class Expense:
@@ -35,15 +37,19 @@ class View():
 
     @staticmethod
     def ExpenseView(expenses):
-
+        data = [[i.name, i.value] for i in expenses]
+        print(data)
         os.system('clear')
         if len(expenses) == 0:
-            print("You don't have any expense yet")
+            print("You don't have any expense yet.")
         else:
-            print("These are your expenses:")
-            for expense in expenses:
-                print(f'{expense.get_name()}: {expense.get_value()}')
-            input("Press Enter to continue...")
+            print("These are your expenses.\n\n")
+            #for expense in expenses:
+                #print(f'{expense.get_name()}: {expense.get_value()}')
+            print(tabulate(data, headers= ['NAME', 'VALUE']))
+            print("\n\n")
+            input("Enter any key .......")
+            os.system('clear')
     
     @staticmethod
     def Sum():
