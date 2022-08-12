@@ -90,7 +90,8 @@ class View():
         print("         2-Add new expense\n")
         print("         3-Add your income\n")
         print("         4-Saving all the expenses\n")
-        print("         5-Exit")
+        print("         5-Retrive all the expenses\n")
+        print("         6-Exit\n")
         print("-------------------------------------------------")
     
 
