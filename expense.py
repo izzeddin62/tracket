@@ -1,6 +1,7 @@
 #!/usr/bin/python3
+from time import sleep
 from uuid import uuid4
-
+import os
 
 class Expense:
     """ Creating the expense class """
@@ -34,13 +35,16 @@ class View():
 
     @staticmethod
     def ExpenseView(expenses):
+
+        os.system('clear')
         if len(expenses) == 0:
             print("You don't have any expense yet")
         else:
             print("these are your expenses:")
             for expense in expenses:
                 print(f'{expense.get_name()}: {expense.get_value()}')
-
+            input("Press Enter to continue...")
+    
     @staticmethod
     def Sum():
         summ = 0
