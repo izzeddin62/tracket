@@ -8,7 +8,7 @@ import json
 if __name__ == '__main__':
 
     Income = None
-    expenses = [Expense('Rent', 300),Expense("Leisure", 400)]
+    expenses = Saving.retreiving_data()
     users = [User("SANI", 20000), User("PRAISE", 120000), User("NINO", 50000), User("ELLSIE", 350000)]
     Bool = False
     choice = None
@@ -22,7 +22,7 @@ if __name__ == '__main__':
     os.system('clear')
     while Bool:
         
-        View.MenuView(Income)
+        View.MenuView(Income, expenses)
         try:
             option = int(input("Select an Option: "))
         except ValueError:
@@ -37,7 +37,10 @@ if __name__ == '__main__':
         elif int(option) == 2: 
             os.system('clear')
             View.expense_add(expenses)
-            Saving.create_json(expenses)
+            Saving.save_to_file(expenses)
+            print("\n\n")
+            input("Enter any key .......")
+            os.system('clear')
             
         elif int(option) == 3:
             os.system('clear')
@@ -52,7 +55,7 @@ if __name__ == '__main__':
         elif int(option) == 4:
             os.system('clear')
             print("Loading your data")
-            Saving.retreiving_data(expenses)
+            #Saving.retreiving_data(expenses)
         
         elif int(option) == 5:
             exit(0)
