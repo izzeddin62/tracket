@@ -82,18 +82,18 @@ class View():
                 print(f"You are remaining with only {remaining}.")
 
             elif remaining == 0:
-                print("You will run out of money.\n Be careful until you make more.")
+                print("You will run out of money.\nLearn to spend wisely!!")
 
             else:
-                print(f"You are running on a budget.\n You already spent {remaining} above your budget.")
+                print(f"You are running on a budget.\nYou already spent {remaining} above your budget.")
 
         print("-------------------------------------------------")
         print("-------------------------------------------------")
         print("         HELLO, WELCOME TO TRACKET!!\n")
         print("         Choose an option\n")
         print("         1-View your expenses\n")
-        print("         2-Add new expense\n")
-        print("         3-Add your income\n")
+        print("         2-Add a new expense\n")
+        print("         3-Add your new income\n")
         print("         4-Retrieve all the expenses\n")
         print("         5-Exit\n")
         print("-------------------------------------------------")
