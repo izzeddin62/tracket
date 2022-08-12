@@ -21,7 +21,7 @@ class User:
     @staticmethod
     def IntroView():
         print("                     T-R-A-C-K-E-T          ")
-        print(" \x1B[3m   Your favourite expenses tracker buddy...  \x1B[0m \n")  
+        print(" \x1B[3m     Your favourite expenses tracker buddy...  \x1B[0m \n")  
 
         print("  WELCOME AND THANKS FOR PARTICIPATING IN OUR APP TESTING PHASE")
         print("             Before starting please select a user\n")

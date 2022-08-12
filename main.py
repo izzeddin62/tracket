@@ -8,7 +8,7 @@ import json
 if __name__ == '__main__':
 
     Income = None
-    expenses = [Expense('Rent', 300),Expense("leisure", 400)]
+    expenses = [Expense('Rent', 300),Expense("Leisure", 400)]
     users = [User("SANI", 20000), User("PRAISE", 120000), User("NINO", 50000), User("ELLSIE", 350000)]
     Bool = False
     choice = None
