@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from uuid import uuid4
 
 
@@ -89,9 +90,8 @@ class View():
         print("         1-View your expenses\n")
         print("         2-Add new expense\n")
         print("         3-Add your income\n")
-        print("         4-Saving all the expenses\n")
-        print("         5-Retrive all the expenses\n")
-        print("         6-Exit\n")
+        print("         4-Retrive all the expenses\n")
+        print("         5-Exit\n")
         print("-------------------------------------------------")
     
 

@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 class User:
     def __init__(self, name, income):
         self.name = name

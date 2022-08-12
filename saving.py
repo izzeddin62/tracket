@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import json
 from expense import View, Expense
 """ 
@@ -28,7 +29,7 @@ class Saving:
 
         """ Take in parameter a .json file and load the data in a list of bject"""
         json_string = json.loads([ob.__dict__ for ob in expenses])
-
+        print("Started writing list data into a json file")
         with open("student.json", "w") as file:
             file.write(json_string)
             print("Your data has been successfully loaded")
