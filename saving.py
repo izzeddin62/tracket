@@ -1,23 +1,40 @@
-from expense import View, Expense
-from saving import Saving
-from user import User
-import os
 import json
+from expense import View, Expense
+""" 
+    Class Saving to save the data from the expense list
 
-if __name__ == '__main__':
-    
-    Income = None
-    expenses = [Expense('Rent', 300),Expense("leisure", 400)]
-    users = [User("SANI", 20000), User("PRAISE", 120000), User("NINO", 50000), User("ELLSIE", 350000)]
-    Bool = True
-    
-    User.IntroView()
-    choice = int(input("Enter your option: "))
-    Income = users[choice - 1].get_income()
-    os.system('cls')
+"""
 
-    while Bool:
-        View.MenuView(Income)
+
+class Saving:
+
+    def __init__():
+        pass
+
+    @staticmethod
+    def create_json(expenses):
+
+        """ Take in parameters an expense list object to save it in a .json file """
+        json_string = json.dumps([ob.__dict__ for ob in expenses])
+
+        with open("student.json", "w") as file:
+            #Writting object list elements in the json file
+
+            file.write(json_string)
+            print("Data saved successufully!!!")
+        
+    @staticmethod
+    def retreiving_data(expenses):
+
+        """ Take in parameter a .json file and load the data in a list of bject"""
+        json_string = json.loads([ob.__dict__ for ob in expenses])
+
+        with open("student.json", "w") as file:
+            file.write(json_string)
+            print("Your data has been successfully loaded")
+        
+"""
+    View.MenuView(Income)
         try:
             option = int(input("Select an Option: "))
         except ValueError:
@@ -60,6 +77,4 @@ if __name__ == '__main__':
         else:
             os.system('cls')
             continue
-        
-    print("................................................................................................................................\n")
-
+"""
