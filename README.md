@@ -8,5 +8,16 @@ Our app is composed of 4 differents classes
 ### A user class: 
 That contains differents static method to display the main menu with option to choose a spefic user with is bank account
 
-### The Expense class: 
+### The expense class: 
 That contains 3 static methods 
+
+### The view class:
+
+
+### The saving class:
+
+## Pre requirement before launching the app:
+Install the tabulate module
+### How to install the tabulate module: pip install tabulate
+Read here to better understand how the tabulate module works: https://pypi.org/project/tabulate/
+
