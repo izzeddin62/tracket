@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 class User:
     def __init__(self, name, income):
         self.name = name
@@ -19,12 +20,16 @@ class User:
 
     @staticmethod
     def IntroView():
-        print("............................T......R.....A......C........K........E........T...................................................\n")
-        print("                       WELCOME AND THANKS TO PARTICIPATE TO OUR TESTING PHASE                                                    ")
-        print("                 Before starting please select a User                                                                            ")
-        print("                 1-Name: SANI    Income: 20000")
-        print("                 2-Name: PRAISE  Income: 120000")
-        print("                 3-Name: NINO    Income: 50000")
-        print("                 4-Name: ELLSIE  Income: 350000")
+        print("                     T-R-A-C-K-E-T          ")
+        print(" \x1B[3m     Your favourite expenses tracker buddy...  \x1B[0m \n")  
+
+        print("  WELCOME AND THANKS FOR PARTICIPATING IN OUR APP TESTING PHASE")
+        print("             Before starting please select a user\n")
+        print("             1. Name: SANI      Income: 20000")
+        print("             2. Name: PRAISE    Income: 120000")
+        print("             3. Name: NINO      Income: 50000")
+        print("             4. Name: ELLSIE    Income: 350000")
+
+
 
 

@@ -1,5 +1,9 @@
+#!/usr/bin/python3
+from time import sleep
 from uuid import uuid4
 
+from tabulate import tabulate
+import os
 
 class Expense:
     """ Creating the expense class """
@@ -7,8 +11,11 @@ class Expense:
     def __init__(self, name, value):
         self.name = name
         self.value = value
-        self.id = str(uuid4)
+        self.id = str(uuid4())
     
+
+    def to_dictionary(self):
+        return {"id": self.id, "name": self.name, "value": self.value}
     """ getter method """
     def get_name(self):
         return self.name
@@ -24,8 +31,6 @@ class Expense:
         self.value = y
 
 
-expenses = [Expense('Rent', 300),Expense("leisure", 400)]
-
 class View():
     """ Creating the view class """
     def __init__(self):
@@ -33,23 +38,28 @@ class View():
 
     @staticmethod
     def ExpenseView(expenses):
+        data = [[i.name, i.value] for i in expenses]
+        print(data)
+        os.system('clear')
         if len(expenses) == 0:
-            print("You don't have any expense yet")
+            print("You don't have any expense yet.")
         else:
-            print("these are your expenses:")
-            for expense in expenses:
-                print(f'{expense.get_name()}: {expense.get_value()}')
-
+            print("These are your expenses.\n\n")
+            print(tabulate(data, headers= ['NAME', 'VALUE']))
+            print("\n\n")
+            input("Enter any key .......")
+            os.system('clear')
+    
     @staticmethod
-    def Sum():
+    def Sum(expenses):
         summ = 0
         for expense in expenses:
             summ += expense.get_value()
         return summ
 
     @staticmethod
-    def SumView():
-        print(f"Your total expense:{sum()}")
+    def SumView(expenses):
+        print(f"Your total expense:{sum(expenses)}")
 
 
     @staticmethod
@@ -61,37 +71,35 @@ class View():
         print(f'Your expense has been recorded successfully.')
 
 
+
     @staticmethod
-    def MenuView(income):
+    def MenuView(income, expenses):
 
         """ Display of Menu and differents options """
         print("-----------------------------------------------")
         print("-----------------------------------------------")
 
-        print(f"You have already spent {View.Sum()}")
+        print(f"You have already spent {View.Sum(expenses)}")
 
         if income is not None:
-            remaining = income - View.Sum()
+            remaining = income - View.Sum(expenses)
 
             if remaining > 0:
                 print(f"You are remaining with only {remaining}.")
 
             elif remaining == 0:
-                print("You will run out of money.\n Be careful until you make more.")
+                print("You will run out of money.\nLearn to spend wisely!!")
 
             else:
-                print(f"You are running on a budget.\n You already spent {remaining} above your budget.")
+                print(f"You are running on a budget.\nYou already spent {remaining} above your budget.")
 
         print("-------------------------------------------------")
         print("-------------------------------------------------")
         print("         HELLO, WELCOME TO TRACKET!!\n")
         print("         Choose an option\n")
         print("         1-View your expenses\n")
-        print("         2-Add new expense\n")
-        print("         3-Add your income\n")
-        print("         4-Saving all the expenses\n")
-        print("         5-Exit")
+        print("         2-Add a new expense\n")
+        print("         3-Add your new income\n")
+        print("         4-Retrieve all the expenses\n")
+        print("         5-Exit\n")
         print("-------------------------------------------------")
-    
-
-    

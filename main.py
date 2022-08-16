@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from expense import View, Expense
 from saving import Saving
 from user import User
@@ -5,19 +6,23 @@ import os
 import json
 
 if __name__ == '__main__':
-    
-    Income = None
-    expenses = [Expense('Rent', 300),Expense("leisure", 400)]
-    users = [User("SANI", 20000), User("PRAISE", 120000), User("NINO", 50000), User("ELLSIE", 350000)]
-    Bool = True
-    
-    User.IntroView()
-    choice = int(input("Enter your option: "))
-    Income = users[choice - 1].get_income()
-    os.system('cls')
 
+    Income = None
+    expenses = Saving.retreiving_data()
+    users = [User("SANI", 20000), User("PRAISE", 120000), User("NINO", 50000), User("ELLSIE", 350000)]
+    Bool = False
+    choice = None
+
+    User.IntroView()
+    while Bool == False:
+        if choice is not range(1,5):
+            choice = int(input("Enter your option: "))
+            Income = users[choice - 1].get_income()
+            Bool = True
+    os.system('clear')
     while Bool:
-        View.MenuView(Income)
+        
+        View.MenuView(Income, expenses)
         try:
             option = int(input("Select an Option: "))
         except ValueError:
@@ -25,17 +30,20 @@ if __name__ == '__main__':
             option = int(input("Please, try again. ==> "))
 
         if int(option) == 1:
-            os.system('cls')
+            os.system('clear')
             View.ExpenseView(expenses)
             
             
         elif int(option) == 2: 
-            os.system('cls')
+            os.system('clear')
             View.expense_add(expenses)
-            
+            Saving.save_to_file(expenses)
+            print("\n\n")
+            input("Enter any key .......")
+            os.system('clear')
             
         elif int(option) == 3:
-            os.system('cls')
+            os.system('clear')
             try:
                 value = int(input("What is your income right now? ==> "))
             except ValueError:
@@ -45,21 +53,15 @@ if __name__ == '__main__':
             print(f"Income set to {value} successfully.")
         
         elif int(option) == 4:
-            os.system('cls')
-            print("Started writing list data into a json file")
-            Saving.create_json(expenses)
-            
-        elif int(option) == 5:
-            os.system('cls')
+            os.system('clear')
             print("Loading your data")
-            Saving.retreiving_data(expenses)
+            #Saving.retreiving_data(expenses)
         
-        elif int(option) == 6:
+        elif int(option) == 5:
             exit(0)
 
         else:
-            os.system('cls')
+            os.system('clear')
             continue
         
-    print("................................................................................................................................\n")
-
+    print("................................................................................................................................\n"
