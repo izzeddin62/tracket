@@ -17,7 +17,7 @@ That contains 3 static methods
 ### The saving class:
 
 ## Pre requirement before launching the app:
-Install the tabulate module
-### How to install the tabulate module: pip install tabulate
-Read here to better understand how the tabulate module works: https://pypi.org/project/tabulate/
+You to install the tabulate module
+How to install the tabulate module: pip install tabulate
+If you don't know what is the tabulate module checkout -> https://pypi.org/project/tabulate/
 
